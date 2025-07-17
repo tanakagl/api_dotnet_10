@@ -1,4 +1,4 @@
-﻿namespace api.Application;
+﻿namespace Application;
 
 public class Class1
 {

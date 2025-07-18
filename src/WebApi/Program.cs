@@ -1,8 +1,6 @@
 ﻿using Application.Interfaces;
 using Application.Services;
 using Infrastructure.Repositories;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
 using WebApi.Graphql;
 
 namespace WebApi;
@@ -12,6 +10,7 @@ public class Program
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+        var appSettingsPath = Directory.GetCurrentDirectory();
 
         // Application services
         builder.Services.AddScoped<GetAllUsers>();
@@ -21,7 +20,7 @@ public class Program
 
 
         // WebApi services
-        builder.Services.AddGraphQLServer().AddQueryType<UseQuery>();
+        builder.Services.AddGraphQLServer().AddQueryType<UserQuery>();
 
         var app = builder.Build();
 

@@ -3,7 +3,7 @@ using Domain.Entities;
 
 namespace WebApi.Graphql;
 
-public class UseQuery(GetAllUsers getAllUsers)
+public class UserQuery(GetAllUsers getAllUsers)
 {
     private readonly GetAllUsers _getAllUsers = getAllUsers;
 

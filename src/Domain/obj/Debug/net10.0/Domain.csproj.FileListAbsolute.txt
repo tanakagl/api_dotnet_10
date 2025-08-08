@@ -10,3 +10,15 @@ C:\Users\matheo.bonucia\source\repos\projeto-pessoal\src\Domain\obj\Debug\net10.
 C:\Users\matheo.bonucia\source\repos\projeto-pessoal\src\Domain\obj\Debug\net10.0\refint\Domain.dll
 C:\Users\matheo.bonucia\source\repos\projeto-pessoal\src\Domain\obj\Debug\net10.0\Domain.pdb
 C:\Users\matheo.bonucia\source\repos\projeto-pessoal\src\Domain\obj\Debug\net10.0\ref\Domain.dll
+C:\Sistemas\api_dotnet_10\src\Domain\bin\Debug\net10.0\Domain.deps.json
+C:\Sistemas\api_dotnet_10\src\Domain\bin\Debug\net10.0\Domain.dll
+C:\Sistemas\api_dotnet_10\src\Domain\bin\Debug\net10.0\Domain.pdb
+C:\Sistemas\api_dotnet_10\src\Domain\obj\Debug\net10.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Sistemas\api_dotnet_10\src\Domain\obj\Debug\net10.0\Domain.AssemblyInfoInputs.cache
+C:\Sistemas\api_dotnet_10\src\Domain\obj\Debug\net10.0\Domain.AssemblyInfo.cs
+C:\Sistemas\api_dotnet_10\src\Domain\obj\Debug\net10.0\Domain.csproj.CoreCompileInputs.cache
+C:\Sistemas\api_dotnet_10\src\Domain\obj\Debug\net10.0\Domain.sourcelink.json
+C:\Sistemas\api_dotnet_10\src\Domain\obj\Debug\net10.0\Domain.dll
+C:\Sistemas\api_dotnet_10\src\Domain\obj\Debug\net10.0\refint\Domain.dll
+C:\Sistemas\api_dotnet_10\src\Domain\obj\Debug\net10.0\Domain.pdb
+C:\Sistemas\api_dotnet_10\src\Domain\obj\Debug\net10.0\ref\Domain.dll

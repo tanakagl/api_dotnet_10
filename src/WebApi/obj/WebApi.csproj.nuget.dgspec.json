@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\matheo.bonucia\\source\\repos\\projeto-pessoal\\src\\WebApi\\WebApi.csproj": {}
+    "C:\\Sistemas\\api_dotnet_10\\src\\WebApi\\WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\matheo.bonucia\\source\\repos\\projeto-pessoal\\src\\Application\\Application.csproj": {
+    "C:\\Sistemas\\api_dotnet_10\\src\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\matheo.bonucia\\source\\repos\\projeto-pessoal\\src\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Sistemas\\api_dotnet_10\\src\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\matheo.bonucia\\source\\repos\\projeto-pessoal\\src\\Application\\Application.csproj",
+        "projectPath": "C:\\Sistemas\\api_dotnet_10\\src\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\matheo.bonucia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\matheo.bonucia\\source\\repos\\projeto-pessoal\\src\\Application\\obj\\",
+        "outputPath": "C:\\Sistemas\\api_dotnet_10\\src\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\matheo.bonucia\\source\\repos\\projeto-pessoal\\src\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\matheo.bonucia\\source\\repos\\projeto-pessoal\\src\\Domain\\Domain.csproj"
+              "C:\\Sistemas\\api_dotnet_10\\src\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Sistemas\\api_dotnet_10\\src\\Domain\\Domain.csproj"
               }
             }
           }
@@ -346,14 +346,14 @@
         }
       }
     },
-    "C:\\Users\\matheo.bonucia\\source\\repos\\projeto-pessoal\\src\\Domain\\Domain.csproj": {
+    "C:\\Sistemas\\api_dotnet_10\\src\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\matheo.bonucia\\source\\repos\\projeto-pessoal\\src\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Sistemas\\api_dotnet_10\\src\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\matheo.bonucia\\source\\repos\\projeto-pessoal\\src\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Sistemas\\api_dotnet_10\\src\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\matheo.bonucia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\matheo.bonucia\\source\\repos\\projeto-pessoal\\src\\Domain\\obj\\",
+        "outputPath": "C:\\Sistemas\\api_dotnet_10\\src\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -684,14 +684,14 @@
         }
       }
     },
-    "C:\\Users\\matheo.bonucia\\source\\repos\\projeto-pessoal\\src\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Sistemas\\api_dotnet_10\\src\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\matheo.bonucia\\source\\repos\\projeto-pessoal\\src\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Sistemas\\api_dotnet_10\\src\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\matheo.bonucia\\source\\repos\\projeto-pessoal\\src\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "C:\\Sistemas\\api_dotnet_10\\src\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\matheo.bonucia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\matheo.bonucia\\source\\repos\\projeto-pessoal\\src\\Infrastructure\\obj\\",
+        "outputPath": "C:\\Sistemas\\api_dotnet_10\\src\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -712,11 +712,11 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\matheo.bonucia\\source\\repos\\projeto-pessoal\\src\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\matheo.bonucia\\source\\repos\\projeto-pessoal\\src\\Application\\Application.csproj"
+              "C:\\Sistemas\\api_dotnet_10\\src\\Application\\Application.csproj": {
+                "projectPath": "C:\\Sistemas\\api_dotnet_10\\src\\Application\\Application.csproj"
               },
-              "C:\\Users\\matheo.bonucia\\source\\repos\\projeto-pessoal\\src\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\matheo.bonucia\\source\\repos\\projeto-pessoal\\src\\Domain\\Domain.csproj"
+              "C:\\Sistemas\\api_dotnet_10\\src\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Sistemas\\api_dotnet_10\\src\\Domain\\Domain.csproj"
               }
             }
           }
@@ -736,6 +736,40 @@
       "frameworks": {
         "net10.0": {
           "targetAlias": "net10.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[9.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.7, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[9.0.7, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
+            "Scrutor": {
+              "target": "Package",
+              "version": "[6.1.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -1029,14 +1063,14 @@
         }
       }
     },
-    "C:\\Users\\matheo.bonucia\\source\\repos\\projeto-pessoal\\src\\WebApi\\WebApi.csproj": {
+    "C:\\Sistemas\\api_dotnet_10\\src\\WebApi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\matheo.bonucia\\source\\repos\\projeto-pessoal\\src\\WebApi\\WebApi.csproj",
+        "projectUniqueName": "C:\\Sistemas\\api_dotnet_10\\src\\WebApi\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "C:\\Users\\matheo.bonucia\\source\\repos\\projeto-pessoal\\src\\WebApi\\WebApi.csproj",
+        "projectPath": "C:\\Sistemas\\api_dotnet_10\\src\\WebApi\\WebApi.csproj",
         "packagesPath": "C:\\Users\\matheo.bonucia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\matheo.bonucia\\source\\repos\\projeto-pessoal\\src\\WebApi\\obj\\",
+        "outputPath": "C:\\Sistemas\\api_dotnet_10\\src\\WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1057,11 +1091,11 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\matheo.bonucia\\source\\repos\\projeto-pessoal\\src\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\matheo.bonucia\\source\\repos\\projeto-pessoal\\src\\Application\\Application.csproj"
+              "C:\\Sistemas\\api_dotnet_10\\src\\Application\\Application.csproj": {
+                "projectPath": "C:\\Sistemas\\api_dotnet_10\\src\\Application\\Application.csproj"
               },
-              "C:\\Users\\matheo.bonucia\\source\\repos\\projeto-pessoal\\src\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\matheo.bonucia\\source\\repos\\projeto-pessoal\\src\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Sistemas\\api_dotnet_10\\src\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Sistemas\\api_dotnet_10\\src\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }

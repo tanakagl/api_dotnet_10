@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "whp9zJ13ZGk=",
+  "dgSpecHash": "8VUKxZLybnM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\matheo.bonucia\\source\\repos\\projeto-pessoal\\src\\WebApi\\WebApi.csproj",
+  "projectFilePath": "C:\\Sistemas\\api_dotnet_10\\src\\WebApi\\WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\matheo.bonucia\\.nuget\\packages\\chillicream.nitro.app\\28.0.7\\chillicream.nitro.app.28.0.7.nupkg.sha512",
     "C:\\Users\\matheo.bonucia\\.nuget\\packages\\greendonut\\15.1.7\\greendonut.15.1.7.nupkg.sha512",
@@ -43,9 +43,14 @@
     "C:\\Users\\matheo.bonucia\\.nuget\\packages\\hotchocolate.utilities\\15.1.7\\hotchocolate.utilities.15.1.7.nupkg.sha512",
     "C:\\Users\\matheo.bonucia\\.nuget\\packages\\hotchocolate.utilities.dependencyinjection\\15.1.7\\hotchocolate.utilities.dependencyinjection.15.1.7.nupkg.sha512",
     "C:\\Users\\matheo.bonucia\\.nuget\\packages\\hotchocolate.validation\\15.1.7\\hotchocolate.validation.15.1.7.nupkg.sha512",
-    "C:\\Users\\matheo.bonucia\\.nuget\\packages\\microsoft.entityframeworkcore\\9.0.2\\microsoft.entityframeworkcore.9.0.2.nupkg.sha512",
-    "C:\\Users\\matheo.bonucia\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\9.0.2\\microsoft.entityframeworkcore.abstractions.9.0.2.nupkg.sha512",
-    "C:\\Users\\matheo.bonucia\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\9.0.2\\microsoft.entityframeworkcore.analyzers.9.0.2.nupkg.sha512",
+    "C:\\Users\\matheo.bonucia\\.nuget\\packages\\microsoft.entityframeworkcore\\9.0.7\\microsoft.entityframeworkcore.9.0.7.nupkg.sha512",
+    "C:\\Users\\matheo.bonucia\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\9.0.7\\microsoft.entityframeworkcore.abstractions.9.0.7.nupkg.sha512",
+    "C:\\Users\\matheo.bonucia\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\9.0.7\\microsoft.entityframeworkcore.analyzers.9.0.7.nupkg.sha512",
+    "C:\\Users\\matheo.bonucia\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\9.0.7\\microsoft.entityframeworkcore.relational.9.0.7.nupkg.sha512",
+    "C:\\Users\\matheo.bonucia\\.nuget\\packages\\microsoft.extensions.dependencymodel\\8.0.2\\microsoft.extensions.dependencymodel.8.0.2.nupkg.sha512",
+    "C:\\Users\\matheo.bonucia\\.nuget\\packages\\npgsql\\9.0.3\\npgsql.9.0.3.nupkg.sha512",
+    "C:\\Users\\matheo.bonucia\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\9.0.4\\npgsql.entityframeworkcore.postgresql.9.0.4.nupkg.sha512",
+    "C:\\Users\\matheo.bonucia\\.nuget\\packages\\scrutor\\6.1.0\\scrutor.6.1.0.nupkg.sha512",
     "C:\\Users\\matheo.bonucia\\.nuget\\packages\\system.io.hashing\\8.0.0\\system.io.hashing.8.0.0.nupkg.sha512",
     "C:\\Users\\matheo.bonucia\\.nuget\\packages\\yarp.reverseproxy\\2.3.0\\yarp.reverseproxy.2.3.0.nupkg.sha512"
   ],

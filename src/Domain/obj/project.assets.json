@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\matheo.bonucia\\source\\repos\\projeto-pessoal\\src\\Domain\\Domain.csproj",
+      "projectUniqueName": "C:\\Sistemas\\api_dotnet_10\\src\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "C:\\Users\\matheo.bonucia\\source\\repos\\projeto-pessoal\\src\\Domain\\Domain.csproj",
+      "projectPath": "C:\\Sistemas\\api_dotnet_10\\src\\Domain\\Domain.csproj",
       "packagesPath": "C:\\Users\\matheo.bonucia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\matheo.bonucia\\source\\repos\\projeto-pessoal\\src\\Domain\\obj\\",
+      "outputPath": "C:\\Sistemas\\api_dotnet_10\\src\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

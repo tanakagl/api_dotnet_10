@@ -7,8 +7,8 @@ public class GetAllUsers(IUserRepository userRepository)
 {
     private readonly IUserRepository _userRepository = userRepository;
 
-    public IEnumerable<User> Execute()
+    public async Task<IEnumerable<User>> ExecuteAsync(CancellationToken cancellationToken = default)
     {
-        return _userRepository.GetAll();
+        return await _userRepository.GetAllAsync(cancellationToken: cancellationToken);
     }
 }

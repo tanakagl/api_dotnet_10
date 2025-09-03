@@ -1,7 +1,7 @@
 using Application.Interfaces;
 using Domain.Entities;
 
-namespace Application.Services;
+namespace Application.Services.Users;
 
 public class GetAllUsers(IUserRepository userRepository)
 {

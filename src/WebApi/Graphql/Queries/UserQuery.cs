@@ -1,8 +1,7 @@
-using Application.Services;
 using Domain.Entities;
-using HotChocolate;
+using Application.Services.Users;
 
-namespace WebApi.Graphql;
+namespace WebApi.Graphql.Queries;
 
 public class UserQuery(GetAllUsers getAllUsers)
 {

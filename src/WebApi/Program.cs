@@ -1,10 +1,13 @@
 ﻿using Application.Interfaces;
-using Application.Services;
+using Application.Services.Users;
 using Infrastructure.Context;
 using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
-using WebApi.Graphql;
+using WebApi.Graphql.Mutations;
+using WebApi.Graphql.Subscriptions;
+using WebApi.Graphql.Types.Outputs;
 using HotChocolate.AspNetCore;
+using HotChocolate.Execution;
 
 namespace WebApi;
 
@@ -21,6 +24,9 @@ public class Program
 
         // Application services
         services.AddScoped<GetAllUsers>();
+        services.AddScoped<CreateUser>();
+        services.AddScoped<UpdateUser>();
+        services.AddScoped<DeleteUser>();
 
         // Infrastructure services
         services.AddScoped<IUserRepository, UserRepository>();
@@ -30,9 +36,17 @@ public class Program
             provider.GetService<ILoggerFactory>()!.CreateLogger<UserRepository>());
 
         // WebApi services
-        services.AddGraphQLServer().AddQueryType<UserQuery>();
+        services.AddGraphQLServer()
+            .AddQueryType<Graphql.Queries.UserQuery>()
+            .AddMutationType<UserMutation>()
+            .AddSubscriptionType<UserSubscription>()
+            .AddType<UserType>()
+            .AddInMemorySubscriptions();
 
         var app = builder.Build();
+
+        // Configure WebSockets for subscriptions
+        app.UseWebSockets();
 
         // Configure GraphQL
         if (app.Environment.IsDevelopment())
@@ -41,6 +55,15 @@ public class Program
             {
                 Tool = { Enable = true }
             });
+
+            // Schema inspection endpoint for development
+            app.MapGet("/schema", (IServiceProvider serviceProvider) =>
+            {
+                var executor = serviceProvider.GetRequiredService<IRequestExecutor>();
+                var schema = executor.Schema;
+                return Results.Text(schema.Print(), "text/plain");
+            });
+
         }
         else
         {

@@ -1,4 +1,73 @@
-# GraphQL com Clean Architecture - Guia de Organização
+# 🚀 API .NET 10 com GraphQL & Docker
+
+Uma API moderna construída com .NET 10, GraphQL, Clean Architecture e Docker.
+
+## 📁 Estrutura Organizada
+
+```
+api_dotnet_10/
+├── 📁 src/                    # Código fonte
+│   ├── WebApi/               # Camada de apresentação
+│   ├── Application/          # Casos de uso
+│   ├── Domain/               # Entidades de domínio
+│   └── Infrastructure/       # Acesso a dados
+├── 📁 docker/                # Configurações Docker
+│   ├── docker-compose.yml   # Orquestração de serviços
+│   └── Dockerfile           # Imagem da aplicação
+├── 📁 config/                # Configurações
+│   └── .env.example         # Exemplo de variáveis
+├── 📁 scripts/               # Scripts úteis
+│   ├── start.sh            # Iniciar aplicação
+│   ├── stop.sh             # Parar aplicação
+│   └── clean.sh            # Limpeza Docker
+├── .env                     # Variáveis de ambiente (local)
+├── .gitignore              # Arquivos ignorados
+└── README.md               # Esta documentação
+```
+
+## 🚀 Quick Start
+
+### **1. Configurar Ambiente**
+```bash
+# Copiar variáveis de ambiente
+cp config/.env.example .env
+
+# Editar conforme necessário
+nano .env
+```
+
+### **2. Executar com Docker**
+```bash
+# Iniciar tudo (API + Banco)
+./scripts/start.sh
+
+# Ou manualmente:
+docker compose -f docker/docker-compose.yml up --build
+```
+
+### **3. Acessar Aplicação**
+- **API GraphQL**: http://localhost:8080/graphql
+- **Banana Cake Pop**: http://localhost:8080/graphql (interface visual)
+- **Banco PostgreSQL**: localhost:5433
+
+## 🛠️ Comandos Úteis
+
+```bash
+# Iniciar aplicação
+./scripts/start.sh
+
+# Parar aplicação  
+./scripts/stop.sh
+
+# Limpeza completa
+./scripts/clean.sh
+
+# Ou usar Docker diretamente
+docker compose -f docker/docker-compose.yml up --build
+
+# Logs em tempo real
+docker compose -f docker/docker-compose.yml logs -f api
+```
 
 ## 📋 Conceitos Fundamentais
 
@@ -17,79 +86,67 @@
 2. **Mutations** (✏️ Escrita): Equivale ao POST/PUT/DELETE em REST
 3. **Subscriptions** (🔔 Tempo Real): Para dados em tempo real (WebSockets)
 
-## 🏗️ Estrutura do Projeto
+## 🏗️ Clean Architecture
 
-```
-WebApi/
-├── Graphql/
-│   ├── Queries/           # 📖 Operações de leitura
-│   │   └── UserQuery.cs
-│   ├── Mutations/         # ✏️ Operações de escrita
-│   │   └── UserMutation.cs
-│   ├── Subscriptions/     # 🔔 Operações em tempo real
-│   │   └── UserSubscription.cs
-│   └── Types/            # 📝 Definições de tipos
-│       ├── Inputs/       # ⬇️ Dados de entrada
-│       │   └── CreateUserInput.cs
-│       └── Outputs/      # ⬆️ Dados de saída
-│           └── UserType.cs
-```
+### **Responsabilidades por Camada**
 
-## 🎯 Clean Architecture - Responsabilidades
+#### **WebApi (Apresentação)**
+- Queries/Mutations GraphQL
+- Types e Inputs
+- Resolvers
 
-### **1. WebApi Layer (Apresentação)**
-- **Queries**: Definem como buscar dados
-- **Mutations**: Definem como modificar dados
-- **Types**: Definem estrutura de entrada/saída
-- **Resolvers**: Conectam GraphQL com Application Layer
+#### **Application (Casos de Uso)**  
+- Services de negócio
+- Interfaces para Infrastructure
 
-### **2. Application Layer (Casos de Uso)**
-- **Services**: Lógica de negócio (`GetAllUsers`, `CreateUser`)
-- **Interfaces**: Contratos para Infrastructure
+#### **Domain (Entidades)**
+- Models de domínio
+- Regras de negócio
 
-### **3. Domain Layer (Entidades)**
-- **Entities**: Modelos de domínio (`User`, `EntityBase`)
+#### **Infrastructure (Dados)**
+- Repositories
+- DbContext (Entity Framework)
 
-### **4. Infrastructure Layer (Dados)**
-- **Repositories**: Acesso a dados
-- **Context**: EF Core DbContext
+## � Docker
 
-## 📝 Exemplo Prático - Criar Usuário
+### **Multi-Stage Build**
+- **Build Stage**: .NET SDK (compilação)  
+- **Runtime Stage**: ASP.NET Runtime (execução)
+- **Resultado**: Imagem otimizada (~200MB)
 
-### **1. Input Type (Entrada)**
-```csharp
-public record CreateUserInput(string Name, string Email);
-```
+### **Serviços**
+- **API**: .NET 10 aplicação
+- **PostgreSQL**: Banco de dados
+- **Volumes**: Persistência de dados
+- **Network**: Comunicação entre containers
 
-### **2. Mutation (GraphQL)**
-```csharp
-public class UserMutation
-{
-    public async Task<User> AddUser(
-        CreateUserInput input,
-        [Service] CreateUser createUser)
-    {
-        return await createUser.ExecuteAsync(input.Name, input.Email);
-    }
-}
+## 🔧 Configuração
+
+### **Variáveis de Ambiente (.env)**
+```bash
+# Database
+POSTGRES_DB=api_dotnet_10
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=123
+
+# API
+ASPNETCORE_ENVIRONMENT=Development
 ```
 
-### **3. Service (Application)**
-```csharp
-public class CreateUser
-{
-    public async Task<User> ExecuteAsync(string name, string email)
-    {
-        var user = new User { Name = name, Email = email };
-        return await _userRepository.CreateAsync(user);
-    }
-}
-```
+### **Portas**
+- **API HTTP**: 8080
+- **API HTTPS**: 8081  
+- **PostgreSQL**: 5433
 
-### **4. Query GraphQL Cliente**
+## 📝 Exemplo de Uso
+
+### **Criar Usuário**
 ```graphql
 mutation {
-  addUser(input: { name: "João", email: "joao@email.com" }) {
+  addUser(input: { 
+    name: "João Silva", 
+    email: "joao@email.com" 
+  }) {
     id
     name
     email
@@ -98,53 +155,33 @@ mutation {
 }
 ```
 
-## 🔄 Fluxo de Dados
-
-```
-Cliente GraphQL
-    ↓ (Mutation/Query)
-WebApi/Graphql (Presentation)
-    ↓ (Chama Service)
-Application/Services (Use Cases)
-    ↓ (Usa Repository)
-Infrastructure/Repositories (Data Access)
-    ↓ (Acessa Banco)
-Database
-```
-
-## 🚀 Vantagens desta Organização
-
-1. **Separação Clara**: Cada camada tem responsabilidade única
-2. **Testabilidade**: Services podem ser testados independentemente
-3. **Flexibilidade**: GraphQL permite queries específicas
-4. **Reutilização**: Services podem ser usados em outros contextos
-5. **Manutenibilidade**: Estrutura organizada e previsível
-
-## 📊 Subscriptions - Dados em Tempo Real
-
-Para dados que mudam frequentemente, use subscriptions:
-
+### **Buscar Usuários**
 ```graphql
-subscription {
-  userCreated {
+query {
+  users {
     id
     name
     email
+    lastModified
   }
 }
 ```
 
-## 🛠️ Ferramentas de Desenvolvimento
+## 🚀 Próximos Passos
 
-- **Banana Cake Pop**: Interface gráfica para testar GraphQL (habilitada em desenvolvimento)
-- **Schema Explorer**: Documentação automática dos tipos e operações
-- **IntelliSense**: Autocompletar nas queries
+- [ ] Implementar autenticação JWT
+- [ ] Adicionar validações
+- [ ] Criar testes unitários
+- [ ] Configurar CI/CD
+- [ ] Documentar API completa
 
-## 📈 Próximos Passos
+## �️ Segurança
 
-1. ✅ Implementar validações nos inputs
-2. ✅ Adicionar tratamento de erros
-3. ✅ Criar mais operações (Update, Delete)
-4. ✅ Implementar paginação
-5. ✅ Adicionar filtros nas queries
-6. ✅ Configurar autenticação/autorização
+- Container roda com usuário não-root
+- Health checks configurados
+- Variáveis sensíveis em .env
+- .env no .gitignore
+
+---
+
+**Desenvolvido com ❤️ usando .NET 10, GraphQL e Docker**

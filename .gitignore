@@ -15,6 +15,7 @@ node_modules/
 .env.local
 .env.production
 .env.development
+!config/.env.example
 
 # Package lock files
 package-lock.json

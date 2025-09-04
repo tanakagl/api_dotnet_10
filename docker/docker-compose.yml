@@ -21,7 +21,9 @@ services:
 
   # .NET 10 API
   api:
-    build: .
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
     container_name: api_dotnet_10_app
     environment:
       - ASPNETCORE_ENVIRONMENT=Development

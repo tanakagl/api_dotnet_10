@@ -2,7 +2,10 @@
 FROM mcr.microsoft.com/dotnet/sdk:10.0-preview AS build
 WORKDIR /src
 
-# Copy solution and project files first
+# Copy NuGet.Config first to override any Windows-specific settings
+COPY NuGet.Config ./
+
+# Copy solution and project files
 COPY api.sln ./
 COPY src/WebApi/WebApi.csproj ./src/WebApi/
 COPY src/Application/Application.csproj ./src/Application/
@@ -10,8 +13,9 @@ COPY src/Domain/Domain.csproj ./src/Domain/
 COPY src/Infrastructure/Infrastructure.csproj ./src/Infrastructure/
 COPY src/WebApiTest/WebApiTest.csproj ./src/WebApiTest/
 
-# Restore dependencies
-RUN dotnet restore
+# Clear NuGet cache and restore dependencies
+RUN dotnet nuget locals all --clear
+RUN dotnet restore --no-cache
 
 # Copy source code
 COPY . .

@@ -10,7 +10,7 @@ fi
 
 # Build and start services
 echo "📦 Building and starting services..."
-docker compose -f docker/docker-compose.yml up --build
+docker compose -f ../docker/docker-compose.yml up -d --build
 
 echo "✅ API is running!"
 echo "🌐 API: http://localhost:8080"

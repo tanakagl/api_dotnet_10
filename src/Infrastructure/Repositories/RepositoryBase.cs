@@ -16,9 +16,6 @@ public class RepositoryBase<TEntity>(ApplicationDbContext context, ILogger logge
     public virtual async Task<TEntity?> CreateAsync(TEntity entity, CancellationToken cancellationToken = default)
     {
         _logger.LogInformation("Trying create register in entity: {Entity}", entity);
-
-        entity.CreatedAt = DateTime.UtcNow;
-        entity.UpdatedAt = DateTime.UtcNow;
         await Set.AddAsync(entity, cancellationToken).ConfigureAwait(false);
         await _context.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
         _logger.LogInformation("Successful create register in entity: {Entity}", entity);

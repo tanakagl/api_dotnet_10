@@ -1,11 +1,25 @@
 {
   "profiles": {
-    "WebApi": {
-      "commandName": "Project"
+    },
+    "WebApi-Debug": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "launchUrl": "graphql",
+      "applicationUrl": "https://localhost:7001;http://localhost:5001",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_URLS": "https://localhost:7001;http://localhost:5001"
+      }
     },
     "WSL": {
       "commandName": "WSL2",
-      "distributionName": ""
+      "distributionName": "",
+      "launchBrowser": true,
+      "launchUrl": "https://localhost:7001/graphql",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
     }
   }
 }

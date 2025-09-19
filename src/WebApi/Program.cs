@@ -24,18 +24,12 @@ public class Program
             options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
         // Application services
-        services.AddScoped<GetAllUsers>();
         services.AddScoped<CreateUser>();
         services.AddScoped<UpdateUser>();
         services.AddScoped<DeleteUser>();
-        services.AddScoped<GetUserById>();
 
         // Infrastructure services
         services.AddScoped<IUserRepository, UserRepository>();
-
-        // Register logger for repositories
-        services.AddScoped(provider =>
-            provider.GetService<ILoggerFactory>()!.CreateLogger<UserRepository>());
 
         // WebApi services
         services.AddGraphQLServer()

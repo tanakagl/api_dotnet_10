@@ -3,12 +3,10 @@ using Domain.Entities;
 
 namespace Application.Services.Users;
 
-public class GetAllUsers(IUserRepository userRepository)
+public class GetAllUsers
 {
-    private readonly IUserRepository _userRepository = userRepository;
-
-    public async Task<IEnumerable<User>> ExecuteAsync(CancellationToken cancellationToken = default)
+    public static async Task<IEnumerable<User>> ExecuteAsync(IUserRepository userRepository, CancellationToken cancellationToken = default)
     {
-        return await _userRepository.GetAllAsync(cancellationToken: cancellationToken);
+        return await userRepository.GetAllAsync(cancellationToken: cancellationToken);
     }
 }

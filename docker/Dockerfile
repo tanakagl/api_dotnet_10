@@ -22,7 +22,8 @@ COPY . .
 
 # Build and publish
 WORKDIR /src/src/WebApi
-RUN dotnet publish -c Release -o /app/out --no-restore
+RUN dotnet restore --no-cache
+RUN dotnet publish -c Release -o /app/out
 
 # Runtime stage
 FROM mcr.microsoft.com/dotnet/aspnet:10.0-preview AS runtime

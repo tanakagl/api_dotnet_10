@@ -1,0 +1,29 @@
+services:
+  # PostgreSQL Database for debugging (API runs locally)
+  postgres-debug:
+    image: postgres:17
+    container_name: api_dotnet_10_db_debug
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-api_dotnet_10_dev}
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-123}
+    ports:
+      - "5432:5432"  # Standard PostgreSQL port for local development
+    volumes:
+      - postgres_debug_data:/var/lib/postgresql/data
+    networks:
+      - api_debug_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+volumes:
+  postgres_debug_data:
+    driver: local
+
+networks:
+  api_debug_network:
+    driver: bridge

@@ -8,6 +8,7 @@ using WebApi.Graphql.Subscriptions;
 using WebApi.Graphql.Types.Outputs;
 using HotChocolate.AspNetCore;
 using HotChocolate.Execution;
+using HotChocolate.Data;
 
 namespace WebApi;
 
@@ -19,7 +20,7 @@ public class Program
         var services = builder.Services;
 
         // Database configuration
-        services.AddDbContext<ApplicationDbContext>(options =>
+        services.AddDbContextPool<ApplicationDbContext>(options =>
             options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
         // Application services
@@ -27,6 +28,7 @@ public class Program
         services.AddScoped<CreateUser>();
         services.AddScoped<UpdateUser>();
         services.AddScoped<DeleteUser>();
+        services.AddScoped<GetUserById>();
 
         // Infrastructure services
         services.AddScoped<IUserRepository, UserRepository>();

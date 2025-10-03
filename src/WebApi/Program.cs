@@ -8,7 +8,7 @@ using WebApi.Graphql.Subscriptions;
 using WebApi.Graphql.Types.Outputs;
 using HotChocolate.AspNetCore;
 using HotChocolate.Execution;
-using HotChocolate.Data;
+using Microsoft.SemanticKernel;
 
 namespace WebApi;
 
@@ -27,6 +27,18 @@ public class Program
         services.AddScoped<CreateUser>();
         services.AddScoped<UpdateUser>();
         services.AddScoped<DeleteUser>();
+
+        // Semantic Kernel - Registrar no DI para usar em requisições HTTP
+        // Singleton para manter uma instância única do kernel e não mutável
+        services.AddSingleton<Kernel>(sp =>
+        {
+            var builderSemanticKernel = Kernel.CreateBuilder();
+            var modelId = Environment.GetEnvironmentVariable("AZURE_OPENAI_MODEL_ID");
+            var apiKey = Environment.GetEnvironmentVariable("AZURE_OPENAI_API_KEY");
+            if (modelId is not null && apiKey is not null)
+                builderSemanticKernel.AddOpenAIChatCompletion(modelId, apiKey);
+            return builderSemanticKernel.Build();
+        });
 
         // Infrastructure services
         services.AddScoped<IUserRepository, UserRepository>();
